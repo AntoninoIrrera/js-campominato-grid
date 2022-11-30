@@ -4,7 +4,9 @@
 const contenitore = document.getElementById("output");
 const bottonePlay = document.querySelector("a.btn-primary");
 
-const numeroQuadrati = document.getElementById("numeroQuadrati");
+const quadratoLungo = document.getElementById("quadratoLungo");
+const quadratoAlto = document.getElementById("quadratoAlto");
+
 
 const erroreNumero = document.getElementById("outputErroreNumero");
 
@@ -32,40 +34,35 @@ bottonePlay.addEventListener("click", function(){
 
     contenitore.innerHTML = "";
     
-    const numeroQuadratiValore = numeroQuadrati.value;
+    const quadratoLungoValore = quadratoLungo.value;
+    const quadratoAltoValore = quadratoAlto.value;
 
-    const radiceQuadrata = Math.sqrt(numeroQuadrati.value);
 
-    if(numeroQuadratiValore > 506){
-        erroreNumero.innerHTML = "Inserire solo numeri minori o uguali a 506";
-    }else{
+    const caselleTotali = quadratoAltoValore * quadratoLungoValore;
 
-        erroreNumero.innerHTML = "";
+    for(let i = 1; i <= caselleTotali; i++){
+        
+        const elementoQuadrato = getQuadrato();
+        
+        elementoQuadrato.style.width = `calc(100% / ${quadratoLungoValore})`
+        elementoQuadrato.style.height = `calc(100% / ${quadratoAltoValore})`
         
         
-        for(let i = 1; i <= numeroQuadratiValore; i++){
+        contenitore.append(elementoQuadrato);
+        
+        elementoQuadrato.append(i);
+        
+        elementoQuadrato.addEventListener("click", function(){
             
-            const elementoQuadrato = getQuadrato();
+            console.log(i);
             
-            elementoQuadrato.style.width = `calc(100% / ${radiceQuadrata})`
-            elementoQuadrato.style.height = `calc(100% / ${radiceQuadrata})`
-            
-            
-            contenitore.append(elementoQuadrato);
-            
-            elementoQuadrato.append(i);
-            
-            elementoQuadrato.addEventListener("click", function(){
-                
-                console.log(i);
-                
-            })
-            
-            
-        }
-    
-    
+        })
+        
+        
     }
+    
+    
+    
      
     
 
