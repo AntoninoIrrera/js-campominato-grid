@@ -30,9 +30,7 @@ function getQuadrato(){
 
 bottonePlay.addEventListener("click", function(){
 
-    for (let i = 1; i <= 100; i++) {
-        contenitore.innerHTML = "";
-    }
+    contenitore.innerHTML = "";
     
     for(let i = 1; i <= 100; i++){
         
