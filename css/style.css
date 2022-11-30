@@ -1,0 +1,30 @@
+header{
+    height: 10vh;
+}
+
+main{
+    height: 80vh;
+    background-color: #7fffd4;
+}
+
+
+footer{
+    height: 10vh;
+}
+
+
+
+
+
+.quadrato{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+
+    
+}
+
+
+.click{
+    background-color: aqua;
+}
