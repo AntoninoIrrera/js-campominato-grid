@@ -30,22 +30,25 @@ function getQuadrato(){
 
 bottonePlay.addEventListener("click", function(){
 
-
+    for (let i = 1; i <= 100; i++) {
+        contenitore.innerHTML = "";
+    }
+    
     for(let i = 1; i <= 100; i++){
         
         const elementoQuadrato = getQuadrato();
-    
+        
         contenitore.append(elementoQuadrato);
-    
+        
         elementoQuadrato.append(i);
-
+        
         elementoQuadrato.addEventListener("click", function(){
-
+            
             console.log(i);
-
+            
         })
-
-
+        
+        
     }
-
+    
 })
