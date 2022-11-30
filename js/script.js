@@ -14,7 +14,7 @@ function getQuadrato(){
 
     const div = document.createElement("div");
 
-    div.classList.add("quadrato", "text-center", "pt-2", "fs-3");
+    div.classList.add("quadrato");
 
     div.addEventListener("click", function(){
     
