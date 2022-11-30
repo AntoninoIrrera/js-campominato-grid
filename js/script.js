@@ -6,7 +6,7 @@ const bottonePlay = document.querySelector("a.btn-primary");
 
 const numeroQuadrati = document.getElementById("numeroQuadrati");
 
-
+const erroreNumero = document.getElementById("outputErroreNumero");
 
 function getQuadrato(){
 
@@ -32,28 +32,41 @@ bottonePlay.addEventListener("click", function(){
 
     contenitore.innerHTML = "";
     
+    const numeroQuadratiValore = numeroQuadrati.value;
 
     const radiceQuadrata = Math.sqrt(numeroQuadrati.value);
 
-    for(let i = 1; i <= numeroQuadrati.value; i++){
-        
-        const elementoQuadrato = getQuadrato();
-        
-        elementoQuadrato.style.width = `calc(100% / ${radiceQuadrata})`
-        elementoQuadrato.style.height = `calc(100% / ${radiceQuadrata})`
+    if(numeroQuadratiValore > 506){
+        erroreNumero.innerHTML = "Inserire solo numeri minori o uguali a 506";
+    }else{
 
-
-        contenitore.append(elementoQuadrato);
+        erroreNumero.innerHTML = "";
         
-        elementoQuadrato.append(i);
         
-        elementoQuadrato.addEventListener("click", function(){
+        for(let i = 1; i <= numeroQuadratiValore; i++){
             
-            console.log(i);
+            const elementoQuadrato = getQuadrato();
             
-        })
-        
-        
-    }
+            elementoQuadrato.style.width = `calc(100% / ${radiceQuadrata})`
+            elementoQuadrato.style.height = `calc(100% / ${radiceQuadrata})`
+            
+            
+            contenitore.append(elementoQuadrato);
+            
+            elementoQuadrato.append(i);
+            
+            elementoQuadrato.addEventListener("click", function(){
+                
+                console.log(i);
+                
+            })
+            
+            
+        }
     
+    
+    }
+     
+    
+
 })
