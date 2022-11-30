@@ -4,7 +4,7 @@
 const contenitore = document.getElementById("output");
 const bottonePlay = document.querySelector("a.btn-primary");
 
-
+const numeroQuadrati = document.getElementById("numeroQuadrati");
 
 
 
@@ -32,10 +32,17 @@ bottonePlay.addEventListener("click", function(){
 
     contenitore.innerHTML = "";
     
-    for(let i = 1; i <= 100; i++){
+
+    const radiceQuadrata = Math.sqrt(numeroQuadrati.value);
+
+    for(let i = 1; i <= numeroQuadrati.value; i++){
         
         const elementoQuadrato = getQuadrato();
         
+        elementoQuadrato.style.width = `calc(100% / ${radiceQuadrata})`
+        elementoQuadrato.style.height = `calc(100% / ${radiceQuadrata})`
+
+
         contenitore.append(elementoQuadrato);
         
         elementoQuadrato.append(i);
