@@ -20,7 +20,11 @@ footer{
 }
 
 
-
+#output{
+    width: 750px;
+    height: 750px;
+    margin: auto;
+}
 
 
 .quadrato{
